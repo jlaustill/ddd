@@ -1,0 +1,16 @@
+{
+  "name": "ddd",
+  "version": "1.0.0",
+  "description": "A repo to demo a DDD layout\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "serve": "ts-node src/index.ts",
+    "test": "test"
+  },
+  "author": "Joshua Austill",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8"
+  }
+}
