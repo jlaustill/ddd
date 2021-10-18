@@ -5,28 +5,14 @@ const prisma = new PrismaClient();
 async function mainAsync() {
   // Connect the client
   await prisma.$connect();
-  // ... you will write your Prisma Client queries here
-  // await prisma.user.create({
-  //   data: {
-  //     name: 'Rich',
-  //     email: 'hello@prisma.com',
-  //     posts: {
-  //       create: {
-  //         title: 'My first post',
-  //         body: 'Lots of really interesting stuff',
-  //         slug: 'my-first-post',
-  //       },
-  //     },
-  //   },
-  // });
 
-  const allUsers = await prisma.user.findMany({
+  const posts = await prisma.post.findMany({
     include: {
-      posts: true,
+      comments: true,
     },
   });
-  // eslint-disable-next-line no-console
-  console.dir(allUsers, { depth: null });
+
+  console.dir(posts, { depth: Infinity });
 }
 
 mainAsync()
